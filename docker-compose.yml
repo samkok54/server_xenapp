@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    server_xenapp:
+        image: server_xenapp
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./:/code
+        networks:
+            - code-network
+        dns: 8.8.8.8
+networks:
+    code-network:
+        driver: bridge
