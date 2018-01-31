@@ -29,13 +29,13 @@ def createuseronly():
     user = ""
             # for i in range(num):
     user = user+"""\r\n
-                <user>\r\n
-                \t<name>"""+username+"""</name>\r\n
-                    \t<password>\r\n
-                    \t<password>""" + password +"""</password>\r\n
-                        \t<changeatnextlogon>False</changeatnextlogon>\r\n
-                        </password>\r\n
-                        </user>"""
+        <user>\r\n
+          \t<name>"""+username+"""</name>\r\n
+          \t<password>\r\n
+          \t<password>""" + password +"""</password>\r\n
+             \t<changeatnextlogon>True</changeatnextlogon>\r\n
+            </password>\r\n
+        </user>"""
 
     payload = text + "" + user + "" + """\r\n</customer>\r\n</request>"""
     # print payload
