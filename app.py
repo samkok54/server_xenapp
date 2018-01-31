@@ -580,36 +580,6 @@ def createuser():
     return response.text
 
 
-@app.route('/createuseronly',methods=['POST'])
-def createuseronly():
-    data = request.json
-    customername = data['customer']
-    username = data['username']
-    password = data['password']
-
-    text = """<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n
-    <request action=\"set\" version=\"1.0\">\r\n
-    <customer>\r\n
-          <name>"""+customername+"""</name>\r\n
-          """
-    user = ""
-    # for i in range(num):
-    user = user+"""\r\n
-        <user>\r\n
-          \t<name>"""+username+"""</name>\r\n
-          \t<password>\r\n
-            \t<password>""" + password +"""</password>\r\n
-            \t<changeatnextlogon>False</changeatnextlogon>\r\n
-          </password>\r\n
-        </user>"""
-
-    payload = text + "" + user + "" + """\r\n</customer>\r\n</request>"""
-    # print payload
-    # current_app.logger.info(payload)
-    response = requests.request("POST", url, data=payload, headers=headers)
-
-    # response = requests.request("POST", url, data=payload, headers=headers)
-    return response.text
 
 
 if __name__ == '__main__':
