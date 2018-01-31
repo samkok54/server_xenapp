@@ -17,7 +17,7 @@ headers = {
 @app.route('/createuserapi',methods=['POST'])
 def createuserapi():
     data = request.json
-    customername = 'api'
+    customername = 'vdi'
     username = data['username']
     password = data['password']
     
