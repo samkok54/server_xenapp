@@ -26,9 +26,9 @@ def createuseronly():
         <customer>\r\n
         <name>"""+customername+"""</name>\r\n
             """
-        user = ""
+    user = ""
             # for i in range(num):
-            user = user+"""\r\n
+    user = user+"""\r\n
                 <user>\r\n
                 \t<name>"""+username+"""</name>\r\n
                     \t<password>\r\n
@@ -37,7 +37,7 @@ def createuseronly():
                         </password>\r\n
                         </user>"""
 
-payload = text + "" + user + "" + """\r\n</customer>\r\n</request>"""
+    payload = text + "" + user + "" + """\r\n</customer>\r\n</request>"""
     # print payload
     # current_app.logger.info(payload)
     response = requests.request("POST", url, data=payload, headers=headers)
