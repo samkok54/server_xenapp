@@ -14,12 +14,12 @@ headers = {
     'postman-token': "30d50e5a-b18b-1c02-2595-c268a10baad2"
     }
 
-@app.route('/createuseronly',methods=['POST'])
-def createuseronly():
+@app.route('/createuserapi',methods=['POST'])
+def createuserapi():
     data = request.json
-    customername = data['customer']
+    customername = 'api'
     username = data['username']
-    password = "mis@Pass01"
+    password = data['password']
     
     text = """<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n
         <request action=\"set\" version=\"1.0\">\r\n
@@ -33,7 +33,7 @@ def createuseronly():
           \t<name>"""+username+"""</name>\r\n
           \t<password>\r\n
           \t<password>""" + password +"""</password>\r\n
-             \t<changeatnextlogon>True</changeatnextlogon>\r\n
+             \t<changeatnextlogon>false</changeatnextlogon>\r\n
             </password>\r\n
         </user>"""
 
